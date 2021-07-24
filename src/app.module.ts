@@ -4,7 +4,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { EventsController } from './Logic/Controller';
-import { AuthModule } from './auth/module';
 
 
 @Module({
@@ -18,7 +17,6 @@ type: 'mysql',
     entities: [Event],
     synchronize: true
   }),
-  AuthModule,
   TypeOrmModule.forFeature([Event])
   ],
   controllers: [AppController, EventsController],
